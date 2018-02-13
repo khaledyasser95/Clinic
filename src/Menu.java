@@ -13,16 +13,7 @@ import java.awt.event.ActionEvent;
  * @author kh sa
  */
 public class Menu extends JPanel {
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - kh sa
-    private JPanel Panel;
-    private JLabel label1;
-    private JLabel picy;
-    private JButton addnewpatient_btn;
-    private JButton search_btn;
-    private JButton operation_btn;
-    private JButton edit_btn;
-    private JButton close_btn;
+
     public Menu() {
         initComponents();
         ImageIcon imgThisImg = new ImageIcon("C:\\Users\\Icy\\Desktop\\1.jpg");
@@ -43,10 +34,9 @@ public class Menu extends JPanel {
 
     private void addnewpatient_btnActionPerformed(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame("GUI");
-        frame.setContentPane(new GUI().tabbedPane1);
+        JFrame frame = new JFrame("AddPatient");
+        frame.setContentPane(new AddPatient().tabbedPane1);
         // frame.setSize(1000,1150);
-
         frame.pack();
         frame.setResizable(false);
         frame.setVisible(true);
@@ -71,21 +61,16 @@ public class Menu extends JPanel {
 
             // JFormDesigner evaluation mark
             Panel.setBorder(new javax.swing.border.CompoundBorder(
-                    new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                            "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                            javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                            java.awt.Color.red), Panel.getBorder()));
-            Panel.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-                public void propertyChange(java.beans.PropertyChangeEvent e) {
-                    if ("border".equals(e.getPropertyName())) throw new RuntimeException();
-                }
-            });
+                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                    java.awt.Color.red), Panel.getBorder())); Panel.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
-            Panel.setLayout(new TableLayout(new double[][]{
-                    {TableLayout.FILL, TableLayout.FILL},
-                    {TableLayout.PREFERRED, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL}}));
-            ((TableLayout) Panel.getLayout()).setHGap(5);
-            ((TableLayout) Panel.getLayout()).setVGap(5);
+            Panel.setLayout(new TableLayout(new double[][] {
+                {TableLayout.FILL, TableLayout.FILL},
+                {TableLayout.PREFERRED, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL}}));
+            ((TableLayout)Panel.getLayout()).setHGap(5);
+            ((TableLayout)Panel.getLayout()).setVGap(5);
 
             //---- label1 ----
             label1.setText("DR MAGED");
@@ -125,5 +110,15 @@ public class Menu extends JPanel {
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
+    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - kh sa
+    private JPanel Panel;
+    private JLabel label1;
+    private JLabel picy;
+    private JButton addnewpatient_btn;
+    private JButton search_btn;
+    private JButton operation_btn;
+    private JButton edit_btn;
+    private JButton close_btn;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
