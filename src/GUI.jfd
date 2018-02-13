@@ -1,0 +1,313 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+			name: "tabbedPane1"
+			"minimumSize": new java.awt.Dimension( 700, 700 )
+			"preferredSize": new java.awt.Dimension( 700, 700 )
+			"autoscrolls": true
+			"opaque": true
+			"background": sfield java.awt.Color lightGray
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class info.clearthought.layout.TableLayout ) {
+				"$columnSpecs": "pref, fill"
+				"hGap": 5
+				"vGap": 5
+				"$rowSpecs": "fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill"
+			} ) {
+				name: "panel1"
+				"minimumSize": new java.awt.Dimension( 700, 700 )
+				"foreground": new java.awt.Color( 0, 153, 255, 255 )
+				"autoscrolls": true
+				"background": new java.awt.Color( 51, 51, 51, 255 )
+				"preferredSize": new java.awt.Dimension( 700, 700 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "name3"
+					"text": "Name"
+					"font": &Font0 new java.awt.Font( "Arial", 0, 25 )
+					"background": new java.awt.Color( 255, 102, 102, 255 )
+					"foreground": &Color0 new java.awt.Color( 255, 255, 255, 255 )
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "name_txt2"
+					"maximumSize": new java.awt.Dimension( 28, 57 )
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": &Font1 new java.awt.Font( "Arial", 0, 36 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "email"
+					"text": "Email"
+					"font": new java.awt.Font( "Arial", 0, 25 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 1
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "email_txt"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "birthdate3"
+					"text": "Birthdate"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font0
+					"foreground": #Color0
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 2
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "birthdate_txt3"
+					"maximumSize": new java.awt.Dimension( 28, 57 )
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font1
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "birthdate_txt3MouseClicked", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 2
+					"gridX": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "age3"
+					"text": "Age"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font0
+					"foreground": #Color0
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 3
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "age_txt3"
+					"maximumSize": new java.awt.Dimension( 28, 57 )
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font1
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "age_txt3MouseClicked", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 3
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "address3"
+					"text": "Address"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font0
+					"foreground": #Color0
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 4
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "address_txt3"
+					"maximumSize": new java.awt.Dimension( 28, 57 )
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 4
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "homenumber3"
+					"text": "Home Number"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font0
+					"foreground": #Color0
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 5
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "homenumber_txt3"
+					"maximumSize": new java.awt.Dimension( 28, 57 )
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 5
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "mobile5"
+					"text": "Mobile #1"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font0
+					"foreground": #Color0
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 6
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "mobile1_txt3"
+					"maximumSize": new java.awt.Dimension( 28, 57 )
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 6
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "mobile6"
+					"text": "Mobile #2"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font0
+					"foreground": #Color0
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 7
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "mobile2_txt3"
+					"maximumSize": new java.awt.Dimension( 28, 57 )
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 7
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "mothername3"
+					"text": "Mother Name"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font0
+					"foreground": #Color0
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 8
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "mothername_txt3"
+					"maximumSize": new java.awt.Dimension( 28, 57 )
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 8
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "birthlocation"
+					"text": "Birth Location"
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"font": new java.awt.Font( "Arial", 0, 25 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 9
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "birthlocation_txt"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 9
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "wayofbirth3"
+					"text": "Way of Birth"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font0
+					"foreground": #Color0
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 10
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "wayofbith_cmb"
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "Natural"
+						addElement( "Natural" )
+						addElement( "Sezeryan" )
+					}
+					"font": new java.awt.Font( "Arial", 1, 22 )
+					"background": new java.awt.Color( 69, 73, 74, 255 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 10
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "weightatbirth3"
+					"text": "Weight at birth"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font0
+					"foreground": #Color0
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 11
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "weightatbirth_txt3"
+					"maximumSize": new java.awt.Dimension( 28, 57 )
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 11
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "heightatbirth3"
+					"text": "Height at birth"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font0
+					"foreground": #Color0
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 12
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "heightatbirth_txt3"
+					"maximumSize": new java.awt.Dimension( 28, 57 )
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 12
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "headcircum3"
+					"text": "Head Circumference"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font0
+					"foreground": #Color0
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 13
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "headcircum_txt3"
+					"maximumSize": new java.awt.Dimension( 28, 57 )
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 13
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "save_btn3"
+					"text": "Save"
+					"minimumSize": new java.awt.Dimension( 79, 41 )
+					"font": #Font1
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "save_btn3MouseClicked", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 14
+				} )
+			}, new FormLayoutConstraints( null ) {
+				"title": "Add"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class info.clearthought.layout.TableLayout ) {
+				"$columnSpecs": "pref, fill"
+				"hGap": 5
+				"vGap": 5
+				"$rowSpecs": "center:fill, center:fill, center:fill, center:fill, center:fill, center:fill, center:fill, center:fill, center:fill, center:fill, center:fill, center:fill, center:fill"
+			} ) {
+				name: "panel2"
+				"minimumSize": new java.awt.Dimension( 888, 1000 )
+			}, new FormLayoutConstraints( null ) {
+				"title": "text"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 5 )
+			"size": new java.awt.Dimension( 490, 534 )
+		} )
+	}
+}
