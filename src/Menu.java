@@ -20,7 +20,6 @@ public class Menu extends JPanel {
     private JLabel picy;
     private JButton addnewpatient_btn;
     private JButton search_btn;
-
     private JButton operation_btn;
     private JButton edit_btn;
     private JButton close_btn;

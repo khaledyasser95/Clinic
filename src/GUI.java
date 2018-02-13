@@ -21,58 +21,26 @@ import java.time.temporal.ChronoUnit;
 /**
  * @author kh sa
  */
-public class GUI extends JFrame {
-    //public JTabbedPane tabbedPane1;
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    private JPanel panel1;
-    private JLabel name3;
-    private JTextField name_txt2;
-    private JLabel email;
-    private JTextField email_txt;
-    private JLabel birthdate3;
-    private JTextField birthdate_txt3;
-    private JLabel age3;
-    private JTextField age_txt3;
+public class GUI  {
 
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - kh sa
-    public JTabbedPane tabbedPane1;
-    private JLabel address3;
-    private JTextField address_txt3;
-    private JLabel homenumber3;
-    private JTextField homenumber_txt3;
-    private JLabel mobile5;
-    private JTextField mobile1_txt3;
-    private JLabel mobile6;
-    private JTextField mobile2_txt3;
-    private JLabel mothername3;
-    private JTextField mothername_txt3;
-    private JLabel birthlocation;
-    private JTextField birthlocation_txt;
-    private JLabel wayofbirth3;
-    private JComboBox<String> wayofbith_cmb;
-    private JLabel weightatbirth3;
-    private JTextField weightatbirth_txt3;
-    private JLabel heightatbirth3;
-    private JTextField heightatbirth_txt3;
-    private JLabel headcircum3;
-    private JTextField headcircum_txt3;
-    private JButton save_btn3;
-    private JPanel panel2;
-    private JLabel label1;
-    private JLabel picy;
-    private JButton AddPatient_btn;
-    private JButton searchforpatient_btn;
-    private JButton operation_btn;
-    private JButton editpatien_btn;
-    private JButton close_btn;
+
+    private Connection conn = null;
+    private PreparedStatement pstmt = null;
     public GUI() {
         initComponents();
         conn = JConnection.ConnectDB();
         getDate();
-        ImageIcon imgThisImg = new ImageIcon("C:\\Users\\Icy\\Desktop\\1.jpg");
-        picy.setIcon(imgThisImg);
+
+    }
+    public static void main(String[] args) {
+        //1. Create the frame.
+        JFrame frame = new JFrame("GUI");
+        frame.setContentPane(new GUI().panel1);
+        // frame.setSize(1000,1150);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setVisible(true);
 
     }
 
@@ -169,7 +137,6 @@ public class GUI extends JFrame {
 
 
     }
-
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - kh sa
@@ -181,10 +148,10 @@ public class GUI extends JFrame {
         email_txt = new JTextField();
         birthdate3 = new JLabel();
         birthdate_txt3 = new JTextField();
-        age3 = new JLabel();
-        age_txt3 = new JTextField();
         address3 = new JLabel();
         address_txt3 = new JTextField();
+        age3 = new JLabel();
+        age_txt3 = new JTextField();
         homenumber3 = new JLabel();
         homenumber_txt3 = new JTextField();
         mobile5 = new JLabel();
@@ -204,14 +171,6 @@ public class GUI extends JFrame {
         headcircum3 = new JLabel();
         headcircum_txt3 = new JTextField();
         save_btn3 = new JButton();
-        panel2 = new JPanel();
-        label1 = new JLabel();
-        picy = new JLabel();
-        AddPatient_btn = new JButton();
-        searchforpatient_btn = new JButton();
-        operation_btn = new JButton();
-        editpatien_btn = new JButton();
-        close_btn = new JButton();
 
         //======== tabbedPane1 ========
         {
@@ -224,28 +183,24 @@ public class GUI extends JFrame {
             //======== panel1 ========
             {
                 panel1.setMinimumSize(new Dimension(700, 700));
-                panel1.setForeground(new Color(0, 153, 255));
+                panel1.setForeground(new Color(204, 204, 204));
                 panel1.setAutoscrolls(true);
                 panel1.setBackground(new Color(51, 51, 51));
                 panel1.setPreferredSize(new Dimension(700, 700));
+                panel1.setFont(new Font("Arial", Font.PLAIN, 15));
 
                 // JFormDesigner evaluation mark
                 panel1.setBorder(new javax.swing.border.CompoundBorder(
-                        new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                                "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                                javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                                java.awt.Color.red), panel1.getBorder()));
-                panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-                    public void propertyChange(java.beans.PropertyChangeEvent e) {
-                        if ("border".equals(e.getPropertyName())) throw new RuntimeException();
-                    }
-                });
+                    new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                        "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                        javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                        java.awt.Color.red), panel1.getBorder())); panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
-                panel1.setLayout(new TableLayout(new double[][]{
-                        {TableLayout.PREFERRED, TableLayout.FILL},
-                        {TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL}}));
-                ((TableLayout) panel1.getLayout()).setHGap(5);
-                ((TableLayout) panel1.getLayout()).setVGap(5);
+                panel1.setLayout(new TableLayout(new double[][] {
+                    {TableLayout.PREFERRED, TableLayout.FILL},
+                    {TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL}}));
+                ((TableLayout)panel1.getLayout()).setHGap(5);
+                ((TableLayout)panel1.getLayout()).setVGap(5);
 
                 //---- name3 ----
                 name3.setText("Name");
@@ -291,13 +246,27 @@ public class GUI extends JFrame {
                 });
                 panel1.add(birthdate_txt3, new TableLayoutConstraints(1, 2, 1, 2, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
 
+                //---- address3 ----
+                address3.setText("Address");
+                address3.setMinimumSize(new Dimension(79, 41));
+                address3.setFont(new Font("Arial", Font.PLAIN, 25));
+                address3.setForeground(Color.white);
+                address3.setHorizontalAlignment(SwingConstants.LEFT);
+                panel1.add(address3, new TableLayoutConstraints(0, 3, 0, 3, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
+
+                //---- address_txt3 ----
+                address_txt3.setMaximumSize(new Dimension(28, 57));
+                address_txt3.setMinimumSize(new Dimension(79, 41));
+                address_txt3.setFont(new Font("Arial", Font.PLAIN, 36));
+                panel1.add(address_txt3, new TableLayoutConstraints(1, 3, 1, 3, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
+
                 //---- age3 ----
                 age3.setText("Age");
                 age3.setMinimumSize(new Dimension(79, 41));
                 age3.setFont(new Font("Arial", Font.PLAIN, 25));
                 age3.setForeground(Color.white);
                 age3.setHorizontalAlignment(SwingConstants.LEFT);
-                panel1.add(age3, new TableLayoutConstraints(0, 3, 0, 3, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
+                panel1.add(age3, new TableLayoutConstraints(0, 4, 0, 4, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
 
                 //---- age_txt3 ----
                 age_txt3.setMaximumSize(new Dimension(28, 57));
@@ -309,21 +278,7 @@ public class GUI extends JFrame {
                         age_txt3MouseClicked(e);
                     }
                 });
-                panel1.add(age_txt3, new TableLayoutConstraints(1, 3, 1, 3, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
-
-                //---- address3 ----
-                address3.setText("Address");
-                address3.setMinimumSize(new Dimension(79, 41));
-                address3.setFont(new Font("Arial", Font.PLAIN, 25));
-                address3.setForeground(Color.white);
-                address3.setHorizontalAlignment(SwingConstants.LEFT);
-                panel1.add(address3, new TableLayoutConstraints(0, 4, 0, 4, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
-
-                //---- address_txt3 ----
-                address_txt3.setMaximumSize(new Dimension(28, 57));
-                address_txt3.setMinimumSize(new Dimension(79, 41));
-                address_txt3.setFont(new Font("Arial", Font.PLAIN, 36));
-                panel1.add(address_txt3, new TableLayoutConstraints(1, 4, 1, 4, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
+                panel1.add(age_txt3, new TableLayoutConstraints(1, 4, 1, 4, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
 
                 //---- homenumber3 ----
                 homenumber3.setText("Home Number");
@@ -400,12 +355,14 @@ public class GUI extends JFrame {
                 panel1.add(wayofbirth3, new TableLayoutConstraints(0, 10, 0, 10, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
 
                 //---- wayofbith_cmb ----
-                wayofbith_cmb.setModel(new DefaultComboBoxModel<>(new String[]{
-                        "Natural",
-                        "Sezeryan"
+                wayofbith_cmb.setModel(new DefaultComboBoxModel<>(new String[] {
+                    "Natural",
+                    "Sezeryan"
                 }));
                 wayofbith_cmb.setFont(new Font("Arial", Font.BOLD, 22));
                 wayofbith_cmb.setBackground(new Color(69, 73, 74));
+                wayofbith_cmb.setForeground(Color.white);
+                wayofbith_cmb.setOpaque(false);
                 panel1.add(wayofbith_cmb, new TableLayoutConstraints(1, 10, 1, 10, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
 
                 //---- weightatbirth3 ----
@@ -462,57 +419,43 @@ public class GUI extends JFrame {
                 });
                 panel1.add(save_btn3, new TableLayoutConstraints(1, 14, 1, 14, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
             }
-            tabbedPane1.addTab("Add new patient", panel1);
-
-            //======== panel2 ========
-            {
-                panel2.setMinimumSize(new Dimension(888, 1000));
-                panel2.setBackground(Color.white);
-                panel2.setLayout(new TableLayout(new double[][]{
-                        {TableLayout.FILL, TableLayout.FILL},
-                        {TableLayout.PREFERRED, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL, TableLayout.FILL}}));
-                ((TableLayout) panel2.getLayout()).setHGap(5);
-                ((TableLayout) panel2.getLayout()).setVGap(5);
-
-                //---- label1 ----
-                label1.setText("DR MAGED");
-                label1.setHorizontalAlignment(SwingConstants.CENTER);
-                label1.setFont(new Font("Arial", Font.PLAIN, 18));
-                panel2.add(label1, new TableLayoutConstraints(0, 0, 1, 0, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
-
-                //---- picy ----
-                picy.setHorizontalAlignment(SwingConstants.CENTER);
-                panel2.add(picy, new TableLayoutConstraints(0, 1, 1, 6, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
-
-                //---- AddPatient_btn ----
-                AddPatient_btn.setText("ADD NEW PATIENT");
-                AddPatient_btn.setFont(new Font("Arial", Font.BOLD, 20));
-                AddPatient_btn.addActionListener(e -> AddPatient_btnActionPerformed(e));
-                panel2.add(AddPatient_btn, new TableLayoutConstraints(0, 7, 1, 7, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
-
-                //---- searchforpatient_btn ----
-                searchforpatient_btn.setText("SEARCH FOR A PATIENT");
-                searchforpatient_btn.setFont(new Font("Arial", Font.BOLD, 20));
-                panel2.add(searchforpatient_btn, new TableLayoutConstraints(0, 8, 1, 8, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
-
-                //---- operation_btn ----
-                operation_btn.setText("OPERATION FOR THE PATIENT");
-                operation_btn.setFont(new Font("Arial", Font.BOLD, 20));
-                panel2.add(operation_btn, new TableLayoutConstraints(0, 9, 1, 9, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
-
-                //---- editpatien_btn ----
-                editpatien_btn.setText("EDIT PATIENT INFORMATION");
-                editpatien_btn.setFont(new Font("Arial", Font.BOLD, 20));
-                panel2.add(editpatien_btn, new TableLayoutConstraints(0, 10, 1, 10, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
-
-                //---- close_btn ----
-                close_btn.setText("CLOSE");
-                close_btn.setFont(new Font("Arial", Font.BOLD, 20));
-                panel2.add(close_btn, new TableLayoutConstraints(0, 11, 1, 11, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
-            }
-            tabbedPane1.addTab("Menu", panel2);
+            tabbedPane1.addTab("Add New Patient", panel1);
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
+
+    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - kh sa
+    public JTabbedPane tabbedPane1;
+    private JPanel panel1;
+    private JLabel name3;
+    private JTextField name_txt2;
+    private JLabel email;
+    private JTextField email_txt;
+    private JLabel birthdate3;
+    private JTextField birthdate_txt3;
+    private JLabel address3;
+    private JTextField address_txt3;
+    private JLabel age3;
+    private JTextField age_txt3;
+    private JLabel homenumber3;
+    private JTextField homenumber_txt3;
+    private JLabel mobile5;
+    private JTextField mobile1_txt3;
+    private JLabel mobile6;
+    private JTextField mobile2_txt3;
+    private JLabel mothername3;
+    private JTextField mothername_txt3;
+    private JLabel birthlocation;
+    private JTextField birthlocation_txt;
+    private JLabel wayofbirth3;
+    private JComboBox<String> wayofbith_cmb;
+    private JLabel weightatbirth3;
+    private JTextField weightatbirth_txt3;
+    private JLabel heightatbirth3;
+    private JTextField heightatbirth_txt3;
+    private JLabel headcircum3;
+    private JTextField headcircum_txt3;
+    private JButton save_btn3;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
