@@ -169,7 +169,7 @@ public class Search extends JPanel implements ActionListener  {
         } else if (menu == menuItemRemove) {
             visit();
         } else if (menu == menuItemRemoveAll) {
-            removeAllRows();
+            operations();
         }
     }
 
@@ -218,6 +218,20 @@ public class Search extends JPanel implements ActionListener  {
         for (int i = 0; i < rowCount; i++) {
             tableModel.removeRow(0);
         }
+    }
+
+    private void operations()
+    {
+        tableModel.getDataVector().elementAt(table1.getSelectedRow());
+        int columnlength= tableModel.getColumnCount();
+        ArrayList<String> coloumnnames = new ArrayList();
+        //  for (int i=0;i<columnlength;i++)
+        //     coloumnnames.add(tableModel.getColumnName(i));
+        System.out.println(tableModel.getDataVector().elementAt(table1.getSelectedRow()));
+        //String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().replace("[","").replace("]","").trim().split(",");
+        String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().trim().replace("[","").replace("]","").split(",");
+        System.out.println(columnvalues);
+        All_Visits visit = new All_Visits(columnvalues[1]);
     }
 
 
