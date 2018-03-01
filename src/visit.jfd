@@ -1,0 +1,188 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class info.clearthought.layout.TableLayout ) {
+			"$columnSpecs": "185.0, 479.0"
+			"$rowSpecs": "fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill"
+			"hGap": 5
+			"vGap": 5
+		} ) {
+			name: "tab"
+			"preferredSize": new java.awt.Dimension( 700, 578 )
+			auxiliary() {
+				"JavaCodeGenerator.variableModifiers": 1
+			}
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label12"
+				"text": "Name"
+				"horizontalAlignment": 0
+				"font": &Font0 new java.awt.Font( "Segoe UI", 1, 20 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "name_txt"
+				"font": &Font1 new java.awt.Font( "Segoe UI", 0, 20 )
+				"editable": false
+				auxiliary() {
+					"JavaCodeGenerator.variableModifiers": 1
+				}
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridX": 1
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Class"
+				"horizontalAlignment": 0
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridY": 1
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "class_txt"
+				"font": #Font1
+				"editable": false
+				auxiliary() {
+					"JavaCodeGenerator.variableModifiers": 1
+				}
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridX": 1
+				"gridY": 1
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Date_visit "
+				"horizontalAlignment": 0
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridY": 2
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "date_txt"
+				"font": #Font1
+				"editable": false
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridX": 1
+				"gridY": 2
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "complain "
+				"horizontalAlignment": 0
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridY": 3
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "complain_txt"
+				"font": #Font1
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridX": 1
+				"gridY": 3
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "symptoms "
+				"horizontalAlignment": 0
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridY": 4
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "symptoms_txt"
+				"font": #Font1
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridX": 1
+				"gridY": 4
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "signs "
+				"horizontalAlignment": 0
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridY": 5
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "signs_txt"
+				"font": #Font1
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridX": 1
+				"gridY": 5
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "investigation "
+				"horizontalAlignment": 0
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridY": 6
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "invest_txt"
+				"font": #Font1
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridX": 1
+				"gridY": 6
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label8"
+				"text": "Diognosis "
+				"horizontalAlignment": 0
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridY": 7
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "Diog_txt"
+				"font": #Font1
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridX": 1
+				"gridY": 7
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label9"
+				"text": "treatment "
+				"horizontalAlignment": 0
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridY": 8
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "treat_txt"
+				"font": #Font1
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridX": 1
+				"gridY": 8
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label10"
+				"text": "picture "
+				"horizontalAlignment": 0
+				"font": #Font0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridY": 9
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "pic"
+				"text": "PI"
+				"preferredSize": new java.awt.Dimension( 12, 50 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridX": 1
+				"gridY": 9
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "Save"
+				"text": "SAVE"
+				"font": new java.awt.Font( "Segoe UI", 1, 20 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "SaveActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+				"gridX": 1
+				"gridY": 10
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 562, 470 )
+		} )
+	}
+}

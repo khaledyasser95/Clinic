@@ -53,6 +53,18 @@ public class Menu extends JPanel {
         frame.setVisible(true);
     }
 
+    private void operation_btnActionPerformed(ActionEvent e) {
+        // TODO add your code here
+       /* JFrame frame = new JFrame("Load_Visits");
+        frame.setContentPane(new Load_Visits().scrollPane1);
+        // frame.setSize(1000,1150);
+        frame.pack();
+        frame.setResizable(false);
+*/
+        //Panels obj_panel = new Panels();
+        All_Visits visit = new All_Visits();
+        //visit.display();
+    }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Nono Koko
@@ -108,6 +120,7 @@ public class Menu extends JPanel {
             //---- operation_btn ----
             operation_btn.setText("OPERATION FOR THE PATIENT");
             operation_btn.setFont(new Font("Arial", Font.BOLD, 20));
+            operation_btn.addActionListener(e -> operation_btnActionPerformed(e));
             Panel.add(operation_btn, new TableLayoutConstraints(0, 9, 1, 9, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
 
             //---- edit_btn ----

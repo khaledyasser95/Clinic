@@ -167,7 +167,7 @@ public class Search extends JPanel implements ActionListener  {
         if (menu == menuItemAdd) {
             selectedData();
         } else if (menu == menuItemRemove) {
-            removeCurrentRow();
+            visit();
         } else if (menu == menuItemRemoveAll) {
             removeAllRows();
         }
@@ -184,6 +184,28 @@ public class Search extends JPanel implements ActionListener  {
         String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().trim().replace("[","").replace("]","").split(",");
         System.out.println(columnvalues);
         editpatient edit = new editpatient(columnvalues);
+    }
+    private void visit()
+    {
+        tableModel.getDataVector().elementAt(table1.getSelectedRow());
+        int columnlength= tableModel.getColumnCount();
+        ArrayList<String> coloumnnames = new ArrayList();
+        //  for (int i=0;i<columnlength;i++)
+        //     coloumnnames.add(tableModel.getColumnName(i));
+        System.out.println(tableModel.getDataVector().elementAt(table1.getSelectedRow()));
+        //String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().replace("[","").replace("]","").trim().split(",");
+        String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().trim().replace("[","").replace("]","").split(",");
+        System.out.println(columnvalues);
+        visit vis = new visit(columnvalues[1]);
+        JFrame frame = new JFrame("visit");
+
+        frame.setContentPane(vis.tab);
+        // frame.setSize(1000,1150);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setVisible(true);
+        vis.name_txt.setText(columnvalues[3]+columnvalues[4]+columnvalues[5]);
+        vis.class_txt.setText(columnvalues[2]);
     }
 
     private void removeCurrentRow() {

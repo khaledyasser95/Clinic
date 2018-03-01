@@ -1,0 +1,39 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+			name: "scrollPane1"
+			"preferredSize": new java.awt.Dimension( 1510, 900 )
+			auxiliary() {
+				"JavaCodeGenerator.variableModifiers": 1
+			}
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class info.clearthought.layout.TableLayout ) {
+				"$columnSpecs": "fill"
+				"$rowSpecs": "min, pref, pref, pref, pref, pref"
+				"hGap": 5
+				"vGap": 5
+			} ) {
+				name: "panel1"
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "scrollPane2"
+					add( new FormComponent( "javax.swing.JTable" ) {
+						name: "table1"
+						"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
+							add( new java.util.Vector )
+							add( new java.util.Vector )
+						}, new java.util.Vector, new java.util.Vector, new java.util.Vector, new java.util.Vector )
+						"font": new java.awt.Font( "Segoe UI", 1, 18 )
+						"rowHeight": 30
+						"selectionMode": 0
+						"autoResizeMode": 4
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 5, 0 )
+			"size": new java.awt.Dimension( 480, 350 )
+		} )
+	}
+}

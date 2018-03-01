@@ -50,6 +50,7 @@ new FormModel {
 				name: "operation_btn"
 				"text": "OPERATION FOR THE PATIENT"
 				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "operation_btnActionPerformed", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 				"gridY": 9
 				"gridWidth": 2
