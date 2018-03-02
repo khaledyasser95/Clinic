@@ -14,9 +14,10 @@ import java.awt.event.ActionEvent;
  */
 public class Menu extends JPanel {
 
+
     public Menu() {
         initComponents();
-        ImageIcon imgThisImg = new ImageIcon("C:\\Users\\Icy\\Desktop\\1.jpg");
+        ImageIcon imgThisImg = new ImageIcon("src/1.jpg");
         picy.setIcon(imgThisImg);
     }
 
@@ -35,7 +36,17 @@ public class Menu extends JPanel {
     private void addnewpatient_btnActionPerformed(ActionEvent e) {
         // TODO add your code here
         JFrame frame = new JFrame("AddPatient");
-        frame.setContentPane(new AddPatient().tabbedPane1);
+        frame.setContentPane(new Add_Patient().tabbedPane1);
+        // frame.setSize(1000,1150);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setVisible(true);
+    }
+
+    private void search_btnActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame("Search");
+        frame.setContentPane(new Search().panel1);
         // frame.setSize(1000,1150);
         frame.pack();
         frame.setResizable(false);
@@ -44,7 +55,7 @@ public class Menu extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - kh sa
+        // Generated using JFormDesigner Evaluation license - Nono Koko
         Panel = new JPanel();
         label1 = new JLabel();
         picy = new JLabel();
@@ -91,6 +102,7 @@ public class Menu extends JPanel {
             //---- search_btn ----
             search_btn.setText("SEARCH FOR A PATIENT");
             search_btn.setFont(new Font("Arial", Font.BOLD, 20));
+            search_btn.addActionListener(e -> search_btnActionPerformed(e));
             Panel.add(search_btn, new TableLayoutConstraints(0, 8, 1, 8, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
 
             //---- operation_btn ----
@@ -111,7 +123,7 @@ public class Menu extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - kh sa
+    // Generated using JFormDesigner Evaluation license - Nono Koko
     private JPanel Panel;
     private JLabel label1;
     private JLabel picy;

@@ -10,11 +10,14 @@ new FormModel {
 			"autoscrolls": true
 			"opaque": true
 			"background": sfield java.awt.Color lightGray
+			auxiliary() {
+				"JavaCodeGenerator.variableModifiers": 1
+			}
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class info.clearthought.layout.TableLayout ) {
 				"$columnSpecs": "pref, fill"
 				"hGap": 5
 				"vGap": 5
-				"$rowSpecs": "fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill"
+				"$rowSpecs": "fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill, fill"
 			} ) {
 				name: "panel1"
 				"minimumSize": new java.awt.Dimension( 700, 700 )
@@ -40,19 +43,63 @@ new FormModel {
 					"gridX": 1
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "ID"
+					"font": &Font2 new java.awt.Font( "Arial", 0, 25 )
+					"foreground": &Color1 new java.awt.Color( 255, 255, 255, 255 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 1
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "id_text"
+					"font": #Font2
+					"foreground": sfield java.awt.Color black
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Class"
+					"font": #Font2
+					"foreground": #Color1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 2
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "class_combo"
+					"font": #Font2
+					"foreground": sfield java.awt.Color black
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "A"
+						addElement( "A" )
+						addElement( "B" )
+						addElement( "C" )
+						addElement( "D" )
+						addElement( "E" )
+						addElement( "F" )
+						addElement( "G" )
+						addElement( "H" )
+					}
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 2
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "email"
 					"text": "Email"
 					"font": new java.awt.Font( "Arial", 0, 25 )
 					"foreground": new java.awt.Color( 255, 255, 255, 255 )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 1
+					"gridY": 3
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "email_txt"
-					"font": &Font2 new java.awt.Font( "Arial", 0, 36 )
+					"font": &Font3 new java.awt.Font( "Arial", 0, 36 )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 					"gridX": 1
-					"gridY": 1
+					"gridY": 3
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "birthdate3"
@@ -62,7 +109,7 @@ new FormModel {
 					"foreground": #Color0
 					"horizontalAlignment": 2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 2
+					"gridY": 4
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "birthdate_txt3"
@@ -71,7 +118,7 @@ new FormModel {
 					"font": #Font1
 					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "birthdate_txt3MouseClicked", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 2
+					"gridY": 4
 					"gridX": 1
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
@@ -82,7 +129,7 @@ new FormModel {
 					"foreground": #Color0
 					"horizontalAlignment": 2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 3
+					"gridY": 5
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "address_txt3"
@@ -91,7 +138,7 @@ new FormModel {
 					"font": #Font1
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 					"gridX": 1
-					"gridY": 3
+					"gridY": 5
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "age3"
@@ -101,7 +148,7 @@ new FormModel {
 					"foreground": #Color0
 					"horizontalAlignment": 2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 4
+					"gridY": 6
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "age_txt3"
@@ -110,7 +157,7 @@ new FormModel {
 					"font": #Font1
 					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "age_txt3MouseClicked", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 4
+					"gridY": 6
 					"gridX": 1
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
@@ -121,7 +168,7 @@ new FormModel {
 					"foreground": #Color0
 					"horizontalAlignment": 2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 5
+					"gridY": 7
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "homenumber_txt3"
@@ -130,7 +177,7 @@ new FormModel {
 					"font": #Font1
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 					"gridX": 1
-					"gridY": 5
+					"gridY": 7
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "mobile5"
@@ -140,7 +187,7 @@ new FormModel {
 					"foreground": #Color0
 					"horizontalAlignment": 2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 6
+					"gridY": 8
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "mobile1_txt3"
@@ -149,7 +196,7 @@ new FormModel {
 					"font": #Font1
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 					"gridX": 1
-					"gridY": 6
+					"gridY": 8
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "mobile6"
@@ -159,7 +206,7 @@ new FormModel {
 					"foreground": #Color0
 					"horizontalAlignment": 2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 7
+					"gridY": 9
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "mobile2_txt3"
@@ -168,7 +215,7 @@ new FormModel {
 					"font": #Font1
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 					"gridX": 1
-					"gridY": 7
+					"gridY": 9
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "mothername3"
@@ -178,7 +225,7 @@ new FormModel {
 					"foreground": #Color0
 					"horizontalAlignment": 2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 8
+					"gridY": 10
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "mothername_txt3"
@@ -187,7 +234,7 @@ new FormModel {
 					"font": #Font1
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 					"gridX": 1
-					"gridY": 8
+					"gridY": 10
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "birthlocation"
@@ -195,14 +242,14 @@ new FormModel {
 					"foreground": new java.awt.Color( 255, 255, 255, 255 )
 					"font": new java.awt.Font( "Arial", 0, 25 )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 9
+					"gridY": 11
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "birthlocation_txt"
-					"font": #Font2
+					"font": #Font3
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 					"gridX": 1
-					"gridY": 9
+					"gridY": 11
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "wayofbirth3"
@@ -212,7 +259,7 @@ new FormModel {
 					"foreground": #Color0
 					"horizontalAlignment": 2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 10
+					"gridY": 12
 				} )
 				add( new FormComponent( "javax.swing.JComboBox" ) {
 					name: "wayofbith_cmb"
@@ -221,13 +268,13 @@ new FormModel {
 						addElement( "Natural" )
 						addElement( "Sezeryan" )
 					}
-					"font": new java.awt.Font( "Arial", 1, 22 )
-					"background": new java.awt.Color( 69, 73, 74, 255 )
-					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"font": new java.awt.Font( "Arial", 0, 22 )
+					"background": sfield java.awt.Color white
+					"foreground": sfield java.awt.Color black
 					"opaque": false
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 					"gridX": 1
-					"gridY": 10
+					"gridY": 12
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "weightatbirth3"
@@ -237,7 +284,7 @@ new FormModel {
 					"foreground": #Color0
 					"horizontalAlignment": 2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 11
+					"gridY": 13
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "weightatbirth_txt3"
@@ -246,7 +293,7 @@ new FormModel {
 					"font": #Font1
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 					"gridX": 1
-					"gridY": 11
+					"gridY": 13
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "heightatbirth3"
@@ -256,7 +303,7 @@ new FormModel {
 					"foreground": #Color0
 					"horizontalAlignment": 2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 12
+					"gridY": 14
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "heightatbirth_txt3"
@@ -265,7 +312,7 @@ new FormModel {
 					"font": #Font1
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 					"gridX": 1
-					"gridY": 12
+					"gridY": 14
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "headcircum3"
@@ -275,7 +322,7 @@ new FormModel {
 					"foreground": #Color0
 					"horizontalAlignment": 2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 13
+					"gridY": 15
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "headcircum_txt3"
@@ -284,7 +331,7 @@ new FormModel {
 					"font": #Font1
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 					"gridX": 1
-					"gridY": 13
+					"gridY": 15
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "save_btn3"
@@ -293,14 +340,14 @@ new FormModel {
 					"font": #Font1
 					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "save_btn3MouseClicked", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
-					"gridY": 14
+					"gridY": 16
 					"gridX": 1
 				} )
 			}, new FormLayoutConstraints( null ) {
 				"title": "Add New Patient"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 5 )
+			"location": new java.awt.Point( 0, 0 )
 			"size": new java.awt.Dimension( 490, 562 )
 		} )
 	}

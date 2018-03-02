@@ -41,6 +41,7 @@ new FormModel {
 				name: "search_btn"
 				"text": "SEARCH FOR A PATIENT"
 				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "search_btnActionPerformed", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 				"gridY": 8
 				"gridWidth": 2
