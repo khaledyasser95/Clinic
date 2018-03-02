@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 public class editpatient {
-    String ID:
+    String ID;
     String Real_id;
     String Class;
     String First_Name;
@@ -32,9 +32,9 @@ public class editpatient {
         Real_id = coloumnvalues[1];
         Class = coloumnvalues[2];
 
-        insertstatic_info( Real_id, Mother_Name,Email);
-        insert(Real_id, Class, First_Name, Mid_Name, Last_Name, Birthdate, Age, Address, Birth_Location, Way_Of_Birth, Weight, Height, Head_Circum);
-        insertphone( Real_id,Telephone,this.mobile_1,this.mobile_2);
+       // insertstatic_info(Real_id, Mother_Name,Email);
+        insert(coloumnvalues);
+       // insertphone( Real_id,Telephone,this.mobile_1,this.mobile_2);
 
 
 
@@ -43,20 +43,8 @@ public class editpatient {
 
     private void insert(String[]coloumnvalues) {
         try {
-            pstmt = conn.prepareStatement("INSERT  into patientinfo(real_id,class,First_Name, Mid_Name, Last_Name, Birthdate, Age, Address, Birth_Location, Way_Of_Birth, Weight, Height, Head_Circum) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
-            pstmt.setString(1, Read_id);
-            pstmt.setString(2, Class);
-            pstmt.setString(3, First_Name);
-            pstmt.setString(4, Mid_Name);
-            pstmt.setString(5, Last_Name);
-            pstmt.setString(6, Birthdate);
-            pstmt.setString(7, Age);
-            pstmt.setString(8, Address);
-            pstmt.setString(9, Birth_Location);
-            pstmt.setString(10, Way_Of_Birth);
-            pstmt.setString(11, Weight);
-            pstmt.setString(12, Height);
-            pstmt.setString(13, Head_Circum);
+            pstmt = conn.prepareStatement("UPDATE  patientinfo SET real_id='"+coloumnvalues[1]+"',class='"+coloumnvalues[2]+"',First_Name='"+coloumnvalues[3]+"',Mid_Name='"+coloumnvalues[4]+"',Last_Name='"+coloumnvalues[5]+"',Birthdate='"+coloumnvalues[6]+"',Age='"+coloumnvalues[7]+"',Address='"+coloumnvalues[8]+"',Birth_Location='"+coloumnvalues[9]+"',Way_Of_Birth='"+coloumnvalues[10]+"',Weight='"+coloumnvalues[11]+"',Height='"+coloumnvalues[12]+"',Head_Circum='"+coloumnvalues[13]+"' WHERE ID='"+coloumnvalues[0]+"'");
+
             int i = pstmt.executeUpdate();
             if (i > 0) {
                 JOptionPane.showMessageDialog(null, "Data Saved");
@@ -69,14 +57,11 @@ public class editpatient {
 
 
     }
-    private void insertphone(String Real_id,String home_number,String mobile1,String mobile2)
+    private void insertphone(String[]coloumnvalues)
     {
         try {
-            pstmt = conn.prepareStatement("INSERT  into telephone(real_id,Home_number, mobile_1, mobile_2) VALUES (?,?,?,?)");
-            pstmt.setString(1, Real_id);
-            pstmt.setString(2, home_number);
-            pstmt.setString(3, mobile1);
-            pstmt.setString(4, mobile2);
+
+            pstmt = conn.prepareStatement("UPDATE  patientinfo SET real_id='"+coloumnvalues[1]+"',Home_number='"+coloumnvalues[2]+"',mobile_1='"+coloumnvalues[3]+"',mobile_2='"+coloumnvalues[3]+"' WHERE ID='"+coloumnvalues[1]+"'");
             int i = pstmt.executeUpdate();
             if (i > 0) {
                // JOptionPane.showMessageDialog(null, "Data Saved");
@@ -88,13 +73,14 @@ public class editpatient {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
-    private void insertstatic_info(String Read_id,String mother_name,String email)
+
+    private void insertstatic_info(String[]coloumnvalues)
     {
         try {
-            pstmt = conn.prepareStatement("INSERT  into static_info(real_id,Mother_name, email) VALUES (?,?,?)");
-            pstmt.setString(1, Read_id);
-            pstmt.setString(2, mother_name);
-            pstmt.setString(3, email);
+
+            pstmt = conn.prepareStatement("UPDATE  patientinfo SET real_id='"+coloumnvalues[1]+"',Home_number='"+coloumnvalues[2]+"',mobile_1='"+coloumnvalues[3]+"' WHERE ID='"+coloumnvalues[1]+"'");
+
+
             int i = pstmt.executeUpdate();
             if (i > 0) {
                 // JOptionPane.showMessageDialog(null, "Data Saved");

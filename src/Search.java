@@ -40,6 +40,7 @@ public class Search extends JPanel implements ActionListener  {
 
     }
 
+
     public void view2(String fname,String midname, String lname) {
         try{
             conn = JConnection.ConnectDB();
@@ -100,6 +101,41 @@ public class Search extends JPanel implements ActionListener  {
             System.out.println(e1.getMessage());
         }
 
+    }
+    @Override
+    public void actionPerformed(ActionEvent event) {
+        JMenuItem menu = (JMenuItem) event.getSource();
+        if (menu == menuItemAdd) {
+            selectedData();
+        } else if (menu == menuItemRemove) {
+            removeCurrentRow();
+        } else if (menu == menuItemRemoveAll) {
+            removeAllRows();
+        }
+    }
+
+    private void selectedData() {
+        tableModel.getDataVector().elementAt(table1.getSelectedRow());
+        int columnlength= tableModel.getColumnCount();
+        ArrayList<String> coloumnnames = new ArrayList();
+        //  for (int i=0;i<columnlength;i++)
+        //     coloumnnames.add(tableModel.getColumnName(i));
+        System.out.println(tableModel.getDataVector().elementAt(table1.getSelectedRow()));
+        //String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().replace("[","").replace("]","").trim().split(",");
+        String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().replace("[","").replace("]","").trim().split(",");
+        editpatient edit = new editpatient(columnvalues);
+    }
+
+    private void removeCurrentRow() {
+        int selectedRow = table1.getSelectedRow();
+        tableModel.removeRow(selectedRow);
+    }
+
+    private void removeAllRows() {
+        int rowCount = tableModel.getRowCount();
+        for (int i = 0; i < rowCount; i++) {
+            tableModel.removeRow(0);
+        }
     }
 
 
@@ -201,42 +237,5 @@ public class Search extends JPanel implements ActionListener  {
     private JTextField search_txt;
     private JButton search_btn;
     private JTable table1;
-
-
-    @Override
-    public void actionPerformed(ActionEvent event) {
-        JMenuItem menu = (JMenuItem) event.getSource();
-        if (menu == menuItemAdd) {
-            selectedData();
-        } else if (menu == menuItemRemove) {
-            removeCurrentRow();
-        } else if (menu == menuItemRemoveAll) {
-            removeAllRows();
-        }
-    }
-
-    private void selectedData() {
-        tableModel.getDataVector().elementAt(table1.getSelectedRow());
-        int columnlength= tableModel.getColumnCount();
-        ArrayList<String> coloumnnames = new ArrayList();
-      //  for (int i=0;i<columnlength;i++)
-       //     coloumnnames.add(tableModel.getColumnName(i));
-        System.out.println(tableModel.getDataVector().elementAt(table1.getSelectedRow()));
-        //String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().replace("[","").replace("]","").trim().split(",");
-        String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().replace("[","").replace("]","").trim().split(",");
-
-    }
-
-    private void removeCurrentRow() {
-        int selectedRow = table1.getSelectedRow();
-        tableModel.removeRow(selectedRow);
-    }
-
-    private void removeAllRows() {
-        int rowCount = tableModel.getRowCount();
-        for (int i = 0; i < rowCount; i++) {
-            tableModel.removeRow(0);
-        }
-    }
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
