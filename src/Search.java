@@ -45,7 +45,8 @@ public class Search extends JPanel implements ActionListener  {
         try{
             conn = JConnection.ConnectDB();
             stmt = conn.createStatement();
-            String sql = "SELECT * FROM patientinfo where First_Name = '"+fname+"'OR  Mid_Name ='"+midname+"'OR Last_Name ='"+lname+"'";
+            //String sql = "SELECT * FROM patientinfo where First_Name = '"+fname+"'OR  Mid_Name ='"+midname+"'OR Last_Name ='"+lname+"'";
+            String sql = "SELECT p.*,p1.Mother_name,p1.email,p2.Home_number,p2.mobile_1,p2.mobile_2 FROM patientinfo p,static_info p1,telephone p2 where (p.First_Name = '"+fname+"'OR  p.Mid_Name ='"+midname+"'OR p.Last_Name ='"+lname+"') AND p.real_id=p1.real_id AND p.real_id=p2.real_id ";
             ResultSet rs = stmt.executeQuery(sql);
 
             ResultSetMetaData md = rs.getMetaData();
@@ -63,7 +64,7 @@ public class Search extends JPanel implements ActionListener  {
                     row.add(rs.getString(i));
                 }
                 data.add(row);
-
+                String x=rs.getString("real_id");
                 //Debugging
                 System.out.println("First Name = " + rs.getString("First_Name"));
                 System.out.println("Last Name = " + rs.getString("Last_Name"));
@@ -78,7 +79,7 @@ public class Search extends JPanel implements ActionListener  {
 
 			// constructs the popup menu
 			popupMenu = new JPopupMenu();
-			menuItemAdd = new JMenuItem("Selected Data");
+			menuItemAdd = new JMenuItem("Update Selected Data");
 			menuItemRemove = new JMenuItem("Remove Current Row");
 			menuItemRemoveAll = new JMenuItem("Remove All Rows");
 
@@ -94,6 +95,64 @@ public class Search extends JPanel implements ActionListener  {
 			table1.setComponentPopupMenu(popupMenu);
 			table1.addMouseListener(new TableMouseListener(table1));
 			setSize(640, 150);
+
+
+        }catch (Exception e1)
+        {
+            System.out.println(e1.getMessage());
+        }
+
+    }
+    public void view() {
+        try{
+            conn = JConnection.ConnectDB();
+            stmt = conn.createStatement();
+            String sql = "SELECT * FROM patientinfo ";
+            ResultSet rs = stmt.executeQuery(sql);
+            ResultSetMetaData md = rs.getMetaData();
+            int columnCount = md.getColumnCount();
+            Vector columns = new Vector(columnCount);
+            for(int i=1; i<=columnCount; i++)
+                columns.add(md.getColumnName(i));
+            Vector data = new Vector();
+            Vector row;
+            while (rs.next()) {
+
+                row = new Vector(columnCount);
+                for(int i=1; i<=columnCount; i++)
+                {
+                    row.add(rs.getString(i));
+                }
+                data.add(row);
+
+
+            }
+
+
+            //Display in JTable
+            tableModel = new DefaultTableModel(data, columns);
+            table1.setModel(tableModel);
+
+
+
+            // constructs the popup menu
+            popupMenu = new JPopupMenu();
+            menuItemAdd = new JMenuItem("Update Selected Data");
+            menuItemRemove = new JMenuItem("Remove Current Row");
+            menuItemRemoveAll = new JMenuItem("Remove All Rows");
+
+            menuItemAdd.addActionListener(this);
+            menuItemRemove.addActionListener(this);
+            menuItemRemoveAll.addActionListener(this);
+
+            popupMenu.add(menuItemAdd);
+            popupMenu.add(menuItemRemove);
+            popupMenu.add(menuItemRemoveAll);
+
+            // sets the popup menu for the table
+            table1.setComponentPopupMenu(popupMenu);
+            table1.addMouseListener(new TableMouseListener(table1));
+            setSize(640, 150);
 
 
         }catch (Exception e1)
@@ -122,7 +181,8 @@ public class Search extends JPanel implements ActionListener  {
         //     coloumnnames.add(tableModel.getColumnName(i));
         System.out.println(tableModel.getDataVector().elementAt(table1.getSelectedRow()));
         //String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().replace("[","").replace("]","").trim().split(",");
-        String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().replace("[","").replace("]","").trim().split(",");
+        String[] columnvalues =tableModel.getDataVector().elementAt(table1.getSelectedRow()).toString().trim().replace("[","").replace("]","").split(",");
+        System.out.println(columnvalues);
         editpatient edit = new editpatient(columnvalues);
     }
 
@@ -149,25 +209,29 @@ public class Search extends JPanel implements ActionListener  {
 
         String[] name = search_txt.getText().split("\\s+");
         System.out.println("Length: "+name.length);
-        First_Name = name[0];
-        if (name.length > 1) {
-            if (name[1].equals(""))
-                Mid_Name = name[1] = "";
-            else
-                Mid_Name = name[1];
-            if (name[2] == null)
-                Last_Name = name[2] = "";
-            else
-                Last_Name = name[2];
-
-        }
-        else
+        if(!name[0].equals(""))
         {
-            Mid_Name="";
-            Last_Name="";
-        }
+            First_Name = name[0];
+            if (name.length > 1) {
+                if (name[1].equals(""))
+                    Mid_Name = name[1] = "";
+                else
+                    Mid_Name = name[1];
+                if (name[2] == null)
+                    Last_Name = name[2] = "";
+                else
+                    Last_Name = name[2];
 
-        view2(First_Name, Mid_Name, Last_Name);
+            }
+            else
+            {
+                Mid_Name="";
+                Last_Name="";
+            }
+
+            view2(First_Name, Mid_Name, Last_Name);
+        }else view();
+
 
     }
 
@@ -177,6 +241,11 @@ public class Search extends JPanel implements ActionListener  {
 
     public void setTable1(JTable table1) {
         this.table1 = table1;
+    }
+
+    private void button1ActionPerformed(ActionEvent e) {
+        // TODO add your code here
+
     }
 
     private void initComponents() {
@@ -201,7 +270,7 @@ public class Search extends JPanel implements ActionListener  {
                     java.awt.Color.red), panel1.getBorder())); panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
             panel1.setLayout(new TableLayout(new double[][] {
-                {371, TableLayout.PREFERRED, TableLayout.FILL, TableLayout.FILL},
+                {371, TableLayout.PREFERRED, TableLayout.PREFERRED, TableLayout.FILL, TableLayout.FILL},
                 {32, TableLayout.FILL}}));
             ((TableLayout)panel1.getLayout()).setHGap(5);
             ((TableLayout)panel1.getLayout()).setVGap(5);
@@ -217,6 +286,8 @@ public class Search extends JPanel implements ActionListener  {
 
             //======== scrollPane1 ========
             {
+                scrollPane1.setAutoscrolls(true);
+                scrollPane1.setMinimumSize(new Dimension(10, 10));
 
                 //---- table1 ----
                 table1.setModel(new DefaultTableModel());
@@ -225,7 +296,7 @@ public class Search extends JPanel implements ActionListener  {
                 table1.setRowHeight(50);
                 scrollPane1.setViewportView(table1);
             }
-            panel1.add(scrollPane1, new TableLayoutConstraints(0, 1, 3, 1, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
+            panel1.add(scrollPane1, new TableLayoutConstraints(0, 1, 4, 1, TableLayoutConstraints.FULL, TableLayoutConstraints.FULL));
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }

@@ -31,10 +31,14 @@ public class editpatient {
         ID=coloumnvalues[0];
         Real_id = coloumnvalues[1];
         Class = coloumnvalues[2];
-
-       // insertstatic_info(Real_id, Mother_Name,Email);
+        for(int i=0;i<coloumnvalues.length;i++)
+        {
+            if (coloumnvalues[i].charAt(0) == ' ')
+                coloumnvalues[i] = coloumnvalues[i].replaceFirst(" ","");
+        }
+        insertstatic_info(coloumnvalues);
         insert(coloumnvalues);
-       // insertphone( Real_id,Telephone,this.mobile_1,this.mobile_2);
+        insertphone(coloumnvalues);
 
 
 
@@ -61,7 +65,7 @@ public class editpatient {
     {
         try {
 
-            pstmt = conn.prepareStatement("UPDATE  patientinfo SET real_id='"+coloumnvalues[1]+"',Home_number='"+coloumnvalues[2]+"',mobile_1='"+coloumnvalues[3]+"',mobile_2='"+coloumnvalues[3]+"' WHERE ID='"+coloumnvalues[1]+"'");
+            pstmt = conn.prepareStatement("UPDATE  telephone SET real_id='"+coloumnvalues[1]+"',Home_number='"+coloumnvalues[17]+"',mobile_1='"+coloumnvalues[18]+"',mobile_2='"+coloumnvalues[19]+"' WHERE real_id='"+coloumnvalues[1]+"'");
             int i = pstmt.executeUpdate();
             if (i > 0) {
                // JOptionPane.showMessageDialog(null, "Data Saved");
@@ -78,7 +82,7 @@ public class editpatient {
     {
         try {
 
-            pstmt = conn.prepareStatement("UPDATE  patientinfo SET real_id='"+coloumnvalues[1]+"',Home_number='"+coloumnvalues[2]+"',mobile_1='"+coloumnvalues[3]+"' WHERE ID='"+coloumnvalues[1]+"'");
+            pstmt = conn.prepareStatement("UPDATE  static_info SET Mother_name='"+coloumnvalues[15]+"',email='"+coloumnvalues[16]+"' WHERE real_id='"+coloumnvalues[1]+"'");
 
 
             int i = pstmt.executeUpdate();

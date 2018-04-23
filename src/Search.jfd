@@ -4,7 +4,7 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class info.clearthought.layout.TableLayout ) {
-			"$columnSpecs": "371.0, pref, fill, fill"
+			"$columnSpecs": "371.0, pref, pref, fill, fill"
 			"$rowSpecs": "32.0, fill"
 			"hGap": 5
 			"vGap": 5
@@ -28,6 +28,8 @@ new FormModel {
 			} )
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "scrollPane1"
+				"autoscrolls": true
+				"minimumSize": new java.awt.Dimension( 10, 10 )
 				auxiliary() {
 					"JavaCodeGenerator.variableLocal": true
 					"JavaCodeGenerator.variableGetter": true
@@ -44,7 +46,7 @@ new FormModel {
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
 				"gridY": 1
-				"gridWidth": 4
+				"gridWidth": 5
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
